@@ -1,0 +1,209 @@
+<!doctype html>
+
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <script>
+      (function() {
+      var script = document.createElement("script");
+      script.src = "http://code.jquery.com/jquery.min.js";
+      script.onload = function() {
+      $.getScript("http://localhost:3000/socket.io/socket.io.js", function() {
+      var socket = new io.Socket("localhost", {"port": 3000});
+      socket.on("message", function(json) {
+      data = JSON.parse(json);
+      $("<li></li>").text("@" + data.user.screen_name + " " + data.text).prependTo("ul");
+      });
+      socket.connect();
+      });
+      };
+      document.getElementsByTagName("head")[0].appendChild(script);
+      })();
+    </script>
+
+
+
+  <!-- this is the very top banner that does not move. -->
+  <div id="banner">
+    <div id="banner-content">
+    This is your banner text, centered and fixed at 800px in width
+    </div>
+  </div>
+
+
+  <!-- this is the numerology banner picture-->
+  <div id='banner-pic'>
+    <img alt src= 'https://pbs.twimg.com/profile_banners/4121389360/1467915246/1500x500' style='transform: none' height='390' width='100%'/>
+  </div>
+
+  <!-- this is my profile picture -->
+  <div class="overlay">
+      <img src="https://pbs.twimg.com/profile_images/751116587885850625/x_8PibZV_400x400.jpg" class="border"/>
+  </div>
+
+  <!-- this is the second banner below the banner pic -->
+  <div id="banner2">
+    <div id="banner2-content">
+      <p id="tweets">
+        Tweets
+      </p>
+      <p id="following">
+        Following
+      </p>
+      <p id="followers">
+        Followers
+      </p>
+      <p id="likes">
+      Likes
+      </p>
+    </div>
+  </div>
+
+
+  <div id="main-content">
+    <p>
+    </p>
+  </div>
+
+  <!-- <script type="text/javascript" src= "http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"> </script> -->
+
+
+  <!-- these are all of the profiles, there's definitely a better way to do this.... -->
+  <div id="main-shit">
+    <div class="row" id="row1">
+
+       <div id="profiles">
+        <img alt src= 'https://unsplash.it/1500/500/?image=1081' style='transform: none' height='32%' width='100%'/>
+
+         <div class="overlay2">
+             <img src="https://pbs.twimg.com/profile_images/751116587885850625/x_8PibZV_400x400.jpg" class="border2"/>
+         </div>
+
+
+         <div class="ProfileCard-content">
+            <a class="twitter-timeline" href="https://twitter.com/NatGeo">Tweets by NatGeo</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+         </div>
+
+       </div>
+
+
+       <div id="profiles">
+         <img alt src= 'https://unsplash.it/1500/500/?image=1082' style='transform: none' height='32%' width='100%'/>
+
+         <div class="ProfileCard-content">
+           <a class="twitter-timeline" href="https://twitter.com/thenetninjauk">Tweets by thenetninjauk</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+         </div>
+
+       </div>
+
+
+       <div id="profiles">
+         <img alt src= 'https://unsplash.it/1500/500/?image=1083'style='transform: none' height='32%' width='100%'/>
+
+         <div class="ProfileCard-content">
+           <a class="twitter-timeline" href="https://twitter.com/thesulk">Tweets by thesulk</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+         </div>
+
+       </div>
+
+
+       <div id="profiles">
+         <img alt src= 'https://unsplash.it/1500/500/?image=1084'style='transform: none' height='32%' width='100%'/>
+
+         <div class="ProfileCard-content">
+           <a class="twitter-timeline" href="https://twitter.com/Codecademy">Tweets by Codecademy</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+         </div>
+
+       </div>
+
+
+       <div id="profiles">
+         <img alt src= 'https://unsplash.it/1500/500/?image=1080' style='transform: none'height='32%' width='100%'/>
+
+         <div class="ProfileCard-content">
+           <a class="twitter-timeline" href="https://twitter.com/kellyoxford">Tweets by kellyoxford</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+         </div>
+
+       </div>
+
+
+       <div id="profiles">
+         <img alt src= 'https://unsplash.it/1500/500/?image=1079'style='transform: none' height='32%' width='100%'/>
+
+         <div class="ProfileCard-content">
+           <a class="twitter-timeline" href="https://twitter.com/jimmyfallon">Tweets by jimmyfallon</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+         </div>
+
+       </div>
+
+       <div id="profiles">
+         <img alt src= 'https://unsplash.it/1500/500/?image=56' style='transform: none' height='32%' width='100%'/>
+
+        <div class="ProfileCard-content">
+          <a class="twitter-timeline" href="https://twitter.com/jimmyfallon">Tweets by jimmyfallon</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+      </div>
+
+      <div id="profiles">
+        <img alt src= 'https://unsplash.it/1500/500/?image=8' style='transform: none'height='32%' width='100%'/>
+
+       <div class="ProfileCard-content">
+         <a class="twitter-timeline" href="https://twitter.com/jimmyfallon">Tweets by jimmyfallon</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+       </div>
+
+      </div>
+
+       <div id="profiles">
+         <img alt src= 'https://unsplash.it/1500/500/?image=16' style='transform: none' height='32%' width='100%'/>
+
+        <div class="ProfileCard-content">
+          <a class="twitter-timeline" href="https://twitter.com/jimmyfallon">Tweets by jimmyfallon</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+      </div>
+
+      <div id="profiles">
+        <img alt src= 'https://unsplash.it/1500/500/?image=12' style='transform: none' height='32%' width='100%'/>
+
+       <div class="ProfileCard-content">
+         <a class="twitter-timeline" href="https://twitter.com/jimmyfallon">Tweets by jimmyfallon</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+       </div>
+
+     </div>
+
+     <div id="profiles">
+       <img alt src= 'https://unsplash.it/1500/500/?image=48' style='transform: none' height='32%' width='100%'/>
+
+      <div class="ProfileCard-content">
+        <a class="twitter-timeline" href="https://twitter.com/jimmyfallon">Tweets by jimmyfallon</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+
+    </div>
+
+
+    <div id="profiles">
+      <img alt src= 'https://unsplash.it/1500/500/?image=1' style='transform: none' height='32%' width='100%'/>
+
+     <div class="ProfileCard-content">
+       <a class="twitter-timeline" href="https://twitter.com/jimmyfallon">Tweets by jimmyfallon</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+     </div>
+
+    </div>
+
+      </div>
+    </div>
+
+
+  <!-- <div class="userInfo">
+      <div id="miirbat">
+        Mirna Plakalovic
+      </div>
+  </div> -->
+
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/events.js"></script>
+</body>
